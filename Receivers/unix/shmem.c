@@ -60,7 +60,7 @@ void rcv_shmem(receiver_data_t* receiver_data)
     rctx_shmem.read_idx = 0;
   }
 
-  if(mod(header->write_idx-rctx_shmem.read_idx, header->max_chunks) > 3){//we are too far behind, skip forward
+  if(mod(header->write_idx-rctx_shmem.read_idx, header->max_chunks) > 2){//we are too far behind, skip forward
     rctx_shmem.read_idx = mod((header->write_idx-1), header->max_chunks);
   }
 
